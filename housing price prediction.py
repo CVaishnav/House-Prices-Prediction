@@ -1,4 +1,4 @@
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.ensemble import RandomForestRegressor
 import pandas as pd
 import numpy as np
 train_url="C:/Users/dell/Downloads/train.csv"
@@ -108,7 +108,7 @@ test["BsmtFinSF2"]=test["BsmtFinSF2"].fillna(test["BsmtFinSF2"].mean())
 X_test=test.iloc[:,1:].values
 
 
-model=RandomForestClassifier(n_estimators=100)
+model=RandomForestRegressor(n_estimators=100)
 model.fit(X_train,target)
 prediction=model.predict(X_test)
 
